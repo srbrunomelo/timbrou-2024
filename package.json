@@ -1,0 +1,26 @@
+{
+  "name": "2b-code",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "storybook": "turbo storybook",
+    "prepare:repo": "yarn install && yarn build",
+    "lint": "biome check",
+    "lint:fix": "biome check --write"
+  },
+  "devDependencies": {
+    "@repo/biome-config": "*",
+    "turbo": "^2.0.11",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "yarn@1.22.19",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "services/*"
+  ]
+}

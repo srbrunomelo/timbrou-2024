@@ -1,0 +1,61 @@
+.rbc-btn-group:first-child {
+  @apply hidden;
+}
+
+.rbc-toolbar-label {
+  @apply !text-right !px-5 !py-0;
+}
+
+.rbc-btn-group:last-child {
+  @apply text-sm;
+}
+
+.rbc-btn-group:last-child button{
+  @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+  @apply border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground;
+}
+
+.rbc-btn-group:last-child button.rbc-active {
+  @apply bg-primary text-primary-foreground;
+}
+
+.rbc-time-view {
+  @apply border-[#eee];
+}
+.rbc-time-content > * + * > * {
+  @apply border-input;
+}
+
+.rbc-allday-cell {
+  @apply hidden;
+}
+.rbc-time-content {
+  @apply border-none;
+}
+
+.rbc-time-gutter.rbc-time-colunm {
+  @apply text-xs;
+}
+
+.rbc-time-gutter.rbc-time-colunm .rbc-timeslot-group {
+  @apply !px-5 !py-0;
+}
+
+.rbc-timeslot-group {
+  @apply bg-white min-h-[70px];
+}
+
+.rbc-day-slot {
+  @apply text-sm;
+}
+
+.rbc-day-slot .rbc-events-container {
+  @apply m-0;
+}
+
+.rbc-event-label {
+  @apply mb-1;
+}
+.rbc-event {
+  @apply !border-none p-3 rounded-md bg-primary text-primary-foreground w-[99%] !h-[6.25%];
+}

@@ -1,0 +1,168 @@
+{
+  "name": "@repo/ui",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "files": [
+    "dist/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "NODE_OPTIONS='--max-old-space-size=16384' tsup && yarn tailwind:build && cp -r src/themes dist",
+    "tailwind:build": "tailwindcss -o ./dist/components/components.css --minify",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "lint:prettier:fix": "prettier --write .",
+    "lint:prettier:check": "prettier --check .",
+    "lint:eslint:check": "eslint .",
+    "lint:eslint:fix": "eslint --fix .",
+    "lint": "yarn lint:prettier:check && yarn lint:eslint:check",
+    "lint:fix": "yarn lint:prettier:fix && yarn lint:eslint:fix"
+  },
+  "dependencies": {
+    "@radix-ui/react-checkbox": "^1.1.1",
+    "@radix-ui/react-dialog": "^1.1.1",
+    "@radix-ui/react-dropdown-menu": "^2.1.1",
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-select": "^2.1.1",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-tooltip": "^1.1.2",
+    "@tanstack/react-table": "^8.20.5",
+    "class-variance-authority": "^0.7.0",
+    "dayjs": "^1.11.13",
+    "lucide-react": "^0.445.0",
+    "react-big-calendar": "^1.14.1",
+    "react-calendar": "^5.0.0",
+    "recharts": "^2.12.7",
+    "tailwind-merge": "^2.4.0",
+    "tsup": "^8.2.4",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.6.1",
+    "@repo/biome-config": "*",
+    "@repo/tailwind-config": "*",
+    "@storybook/addon-essentials": "^8.2.7",
+    "@storybook/addon-interactions": "^8.2.7",
+    "@storybook/addon-links": "^8.2.7",
+    "@storybook/addon-onboarding": "^8.2.7",
+    "@storybook/addon-styling-webpack": "^1.0.0",
+    "@storybook/blocks": "^8.2.7",
+    "@storybook/nextjs": "^8.2.7",
+    "@storybook/react": "^8.2.7",
+    "@storybook/test": "^8.2.7",
+    "@types/react-big-calendar": "^1.8.11",
+    "@types/uuid": "^10.0.0",
+    "storybook": "^8.2.7"
+  },
+  "exports": {
+    "./lib/classes": {
+      "types": "./dist/lib/classes.d.ts",
+      "import": "./dist/lib/classes.esm.js",
+      "require": "./dist/lib/classes.cjs.js"
+    },
+    "./alert": {
+      "types": "./dist/components/alert/alert.d.ts",
+      "import": "./dist/components/alert/alert.esm.js",
+      "require": "./dist/components/alert/alert.cjs.js"
+    },
+    "./badge": {
+      "types": "./dist/components/badge/badge.d.ts",
+      "import": "./dist/components/badge/badge.esm.js",
+      "require": "./dist/components/badge/badge.cjs.js"
+    },
+    "./big-calendar": {
+      "types": "./dist/components/big-calendar/big-calendar.d.ts",
+      "import": "./dist/components/big-calendar/big-calendar.esm.js",
+      "require": "./dist/components/big-calendar/big-calendar.cjs.js"
+    },
+    "./button": {
+      "types": "./dist/components/button/button.d.ts",
+      "import": "./dist/components/button/button.esm.js",
+      "require": "./dist/components/button/button.cjs.js"
+    },
+    "./card": {
+      "types": "./dist/components/card/card.d.ts",
+      "import": "./dist/components/card/card.esm.js",
+      "require": "./dist/components/card/card.cjs.js"
+    },
+    "./chart": {
+      "types": "./dist/components/chart/chart.d.ts",
+      "import": "./dist/components/chart/chart.esm.js",
+      "require": "./dist/components/chart/chart.cjs.js"
+    },
+    "./data-table": {
+      "types": "./dist/components/data-table/data-table.d.ts",
+      "import": "./dist/components/data-table/data-table.esm.js",
+      "require": "./dist/components/data-table/data-table.cjs.js"
+    },
+    "./dropdown": {
+      "types": "./dist/components/dropdown/dropdown.d.ts",
+      "import": "./dist/components/dropdown/dropdown.esm.js",
+      "require": "./dist/components/dropdown/dropdown.cjs.js"
+    },
+    "./icon": {
+      "types": "./dist/components/icon/icon.d.ts",
+      "import": "./dist/components/icon/icon.esm.js",
+      "require": "./dist/components/icon/icon.cjs.js"
+    },
+    "./input": {
+      "types": "./dist/components/input/input.d.ts",
+      "import": "./dist/components/input/input.esm.js",
+      "require": "./dist/components/input/input.cjs.js"
+    },
+    "./label": {
+      "types": "./dist/components/label/label.d.ts",
+      "import": "./dist/components/label/label.esm.js",
+      "require": "./dist/components/label/label.cjs.js"
+    },
+    "./sheet": {
+      "types": "./dist/components/sheet/sheet.d.ts",
+      "import": "./dist/components/sheet/sheet.esm.js",
+      "require": "./dist/components/sheet/sheet.cjs.js"
+    },
+    "./sidebar": {
+      "types": "./dist/components/sidebar/sidebar.d.ts",
+      "import": "./dist/components/sidebar/sidebar.esm.js",
+      "require": "./dist/components/sidebar/sidebar.cjs.js"
+    },
+    "./skeleton": {
+      "types": "./dist/components/skeleton/skeleton.d.ts",
+      "import": "./dist/components/skeleton/skeleton.esm.js",
+      "require": "./dist/components/skeleton/skeleton.cjs.js"
+    },
+    "./small-calendar": {
+      "types": "./dist/components/small-calendar/small-calendar.d.ts",
+      "import": "./dist/components/small-calendar/small-calendar.esm.js",
+      "require": "./dist/components/small-calendar/small-calendar.cjs.js"
+    },
+    "./table": {
+      "types": "./dist/components/table/table.d.ts",
+      "import": "./dist/components/table/table.esm.js",
+      "require": "./dist/components/table/table.cjs.js"
+    },
+    "./tabs": {
+      "types": "./dist/components/tabs/tabs.d.ts",
+      "import": "./dist/components/tabs/tabs.esm.js",
+      "require": "./dist/components/tabs/tabs.cjs.js"
+    },
+    "./utils": {
+      "types": "./dist/components/utils/utils.d.ts",
+      "import": "./dist/components/utils/utils.esm.js",
+      "require": "./dist/components/utils/utils.cjs.js"
+    },
+    "./themes/default.css": {
+      "import": "./dist/themes/default.css",
+      "require": "./dist/themes/default.css"
+    },
+    "./components.css": {
+      "import": "./dist/components/components.css",
+      "require": "./dist/components/components.css"
+    },
+    "./big-calendar.css": {
+      "import": "./dist/components/big-calendar/big-calendar.css",
+      "require": "./dist/components/big-calendar/big-calendar.css"
+    }
+  }
+}

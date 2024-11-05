@@ -1,0 +1,38 @@
+{
+  "name": "@repo/email-sender",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Bruno Dias Donnici",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@repo/utils": "*",
+    "nodemailer": "^6.9.15",
+    "tsup": "^8.2.4"
+  },
+  "devDependencies": {
+    "@repo/biome-config": "*",
+    "@types/node": "^22.5.4",
+    "@types/nodemailer": "^6.4.15",
+    "dotenv": "^16.4.5",
+    "typescript": "^5.6.2",
+    "vitest": "^2.0.5"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
+    },
+    "./smtp": {
+      "types": "./dist/nodemailer/index.d.ts",
+      "import": "./dist/nodemailer/index.esm.js",
+      "require": "./dist/nodemailer/index.cjs.js"
+    }
+  }
+}

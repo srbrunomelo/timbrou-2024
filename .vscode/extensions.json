@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "biomejs.biome",
+        "biomejs.biome-nightly",
+        "naumovs.color-highlight",
+        "editorconfig.editorconfig",
+        "usernamehw.errorlens",
+        "graphql.vscode-graphql-syntax",
+        "bradlc.vscode-tailwindcss"
+    ]
+}

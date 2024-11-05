@@ -1,0 +1,31 @@
+{
+  "name": "@repo/dependency-injection",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@repo/utils": "*"
+  },
+  "devDependencies": {
+    "@repo/biome-config": "*",
+    "@types/node": "^22.3.0",
+    "typescript": "^5.5.4",
+    "vitest": "^2.1.2"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
+    }
+  }
+}

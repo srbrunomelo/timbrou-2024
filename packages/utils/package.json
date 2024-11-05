@@ -1,0 +1,72 @@
+{
+  "name": "@repo/utils",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
+  "dependencies": {
+    "currency.js": "^2.0.4",
+    "dayjs": "^1.11.13",
+    "tsup": "^8.2.4",
+    "uuid": "^10.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@repo/biome-config": "*",
+    "typescript": "^5"
+  },
+  "exports": {
+    "./formatters/clean-object": {
+      "types": "./dist/formatters/clean-object/clean-undefined-properties.d.ts",
+      "import": "./dist/formatters/clean-object/clean-undefined-properties.esm.js",
+      "require": "./dist/formatters/clean-object/clean-undefined-properties.cjs.js"
+    },
+    "./formatters/json/safeParse": {
+      "types": "./dist/formatters/json/safeParse.d.ts",
+      "import": "./dist/formatters/json/safeParse.esm.js",
+      "require": "./dist/formatters/json/safeParse.cjs.js"
+    },
+    "./formatters/string/getInitials": {
+      "types": "./dist/formatters/string/getInitials.d.ts",
+      "import": "./dist/formatters/string/getInitials.esm.js",
+      "require": "./dist/formatters/string/getInitials.cjs.js"
+    },
+    "./patterns/feature-builder": {
+      "types": "./dist/patterns/feature-builder.d.ts",
+      "import": "./dist/patterns/feature-builder.esm.js",
+      "require": "./dist/patterns/feature-builder.cjs.js"
+    },
+    "./patterns/left-right": {
+      "types": "./dist/patterns/left-right-return.d.ts",
+      "import": "./dist/patterns/left-right-return.esm.js",
+      "require": "./dist/patterns/left-right-return.cjs.js"
+    },
+    "./validator/zod/zod-error": {
+      "types": "./dist/validator/zod/zod-error.d.ts",
+      "import": "./dist/validator/zod/zod-error.esm.js",
+      "require": "./dist/validator/zod/zod-error.cjs.js"
+    },
+    "./date": {
+      "types": "./dist/date/date.d.ts",
+      "import": "./dist/date/date.esm.js",
+      "require": "./dist/date/date.cjs.js"
+    },
+    "./string": {
+      "types": "./dist/string/string.d.ts",
+      "import": "./dist/string/string.esm.js",
+      "require": "./dist/string/string.cjs.js"
+    },
+    "./currency": {
+      "types": "./dist/currency/currency.d.ts",
+      "import": "./dist/currency/currency.esm.js",
+      "require": "./dist/currency/currency.cjs.js"
+    }
+  }
+}
