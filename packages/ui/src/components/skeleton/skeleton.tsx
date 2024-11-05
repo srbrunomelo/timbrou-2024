@@ -1,5 +1,5 @@
-import React from 'react';
-import { cn } from '@/lib/classes';
+import { cn } from "@/lib/classes";
+import type React from "react";
 
 function Skeleton({
 	className,

@@ -1,2 +1,2 @@
-export { FetchHTTPRequest as Http } from './fetch/fetch';
-export * from './types';
+export { FetchHTTPRequest as Http } from "./fetch/fetch";
+export * from "./types";

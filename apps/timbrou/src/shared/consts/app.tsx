@@ -1,4 +1,4 @@
-import { Pyramid } from "lucide-react";
+import { Guitar } from "lucide-react";
 
-export const AppLogo = Pyramid;
-export const AppName = "Finance Share";
+export const AppLogo = Guitar;
+export const AppName = "Timbrou";

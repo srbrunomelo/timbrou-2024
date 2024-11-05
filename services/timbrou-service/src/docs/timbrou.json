@@ -1,0 +1,100 @@
+{
+	"openapi": "3.0.3",
+	"info": {
+		"title": "Timbrou",
+		"description": "This is a documentation of timbrou service",
+		"contact": {
+			"email": "bruno.dias.donnici@gmail.com"
+		},
+		"license": {
+			"name": "Apache 2.0",
+			"url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+		},
+		"version": "0.0.1"
+	},
+	"servers": [
+		{
+			"url": "http://localhost:4000"
+		}
+	],
+	"tags": [
+		{
+			"name": "health",
+			"description": "Health check requests"
+		}
+	],
+	"paths": {
+		"/api/v1/status": {
+			"get": {
+				"tags": ["health"],
+				"summary": "Status of application",
+				"description": "Show informations about application status",
+				"operationId": "getApplicationStatus",
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ApplicationStatus"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "Server error",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorResponse"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"ApplicationStatus": {
+				"type": "object",
+				"properties": {
+					"status": {
+						"type": "string",
+						"example": "OK"
+					}
+				}
+			},
+			"ErrorResponse": {
+				"type": "object",
+				"properties": {
+					"code": {
+						"type": "number"
+					},
+					"message": {
+						"type": "string"
+					},
+					"key": {
+						"type": "string"
+					},
+					"custom": {
+						"type": "object"
+					}
+				}
+			}
+		},
+		"securitySchemes": {
+			"Bearer": {
+				"type": "http",
+				"scheme": "bearer",
+				"bearerFormat": "JWT"
+			}
+		}
+	},
+	"security": [
+		{
+			"Bearer": []
+		}
+	]
+}

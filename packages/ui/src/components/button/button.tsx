@@ -24,8 +24,6 @@ const ButtonRoot = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
 ButtonRoot.displayName = "Button";
 
-const Button = Object.assign(ButtonRoot, {
-
-});
+const Button = Object.assign(ButtonRoot, {});
 
 export { Button };

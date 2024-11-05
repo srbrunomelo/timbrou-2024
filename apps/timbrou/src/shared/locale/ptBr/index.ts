@@ -1,5 +1,5 @@
 import layoutTranslations from "./layout.json";
 
 export const ptBr = {
-  ...layoutTranslations,
+	...layoutTranslations,
 } as const;

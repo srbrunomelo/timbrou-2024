@@ -1,36 +1,34 @@
 {
-  "name": "@repo/data-access",
-  "version": "0.0.1",
-  "main": "index.js",
-  "license": "MIT",
-  "private": true,
-  "type": "module",
-  "files": [
-    "dist/**/*"
-  ],
-  "scripts": {
-    "build": "tsup"
-  },
-  "dependencies": {
-    "@apollo/client": "^3.11.4",
-    "@repo/utils": "*",
-    "qs": "^6.13.0"
-  },
-  "devDependencies": {
-    "@repo/biome-config": "*",
-    "@types/node": "^22.3.0",
-    "typescript": "^5.5.4"
-  },
-  "exports": {
-    "./http": {
-      "types": "./dist/http.d.ts",
-      "import": "./dist/http.esm.js",
-      "require": "./dist/http.cjs.js"
-    },
-    "./graphql": {
-      "types": "./dist/http.d.ts",
-      "import": "./dist/http.esm.js",
-      "require": "./dist/http.cjs.js"
-    }
-  }
+	"name": "@repo/data-access",
+	"version": "0.0.1",
+	"main": "index.js",
+	"license": "MIT",
+	"private": true,
+	"type": "module",
+	"files": ["dist/**/*"],
+	"scripts": {
+		"build": "tsup"
+	},
+	"dependencies": {
+		"@apollo/client": "^3.11.4",
+		"@repo/utils": "*",
+		"qs": "^6.13.0"
+	},
+	"devDependencies": {
+		"@repo/biome-config": "*",
+		"@types/node": "^22.3.0",
+		"typescript": "^5.5.4"
+	},
+	"exports": {
+		"./http": {
+			"types": "./dist/http.d.ts",
+			"import": "./dist/http.esm.js",
+			"require": "./dist/http.cjs.js"
+		},
+		"./graphql": {
+			"types": "./dist/http.d.ts",
+			"import": "./dist/http.esm.js",
+			"require": "./dist/http.cjs.js"
+		}
+	}
 }

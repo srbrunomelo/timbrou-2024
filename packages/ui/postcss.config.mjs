@@ -1,5 +1,5 @@
-import postcssConfig from '@repo/tailwind-config/postcss.config';
+import postcssConfig from "@repo/tailwind-config/postcss.config";
 
 export default {
-  ...postcssConfig,
+	...postcssConfig,
 };

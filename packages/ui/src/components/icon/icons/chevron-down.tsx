@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 
 const ChevronDown = (props: React.SVGProps<SVGSVGElement>) => (
 	<svg

@@ -1,6 +1,6 @@
 {
-  "layout.dashboard.title": "Finance Share",
-  "layout.sidebar.dashboard": "Dashboard",
-  "layout.sidebar.wealth": "Patrimônio",
-  "layout.sidebar.users": "Usuários"
+	"layout.dashboard.title": "Finance Share",
+	"layout.sidebar.dashboard": "Dashboard",
+	"layout.sidebar.wealth": "Patrimônio",
+	"layout.sidebar.users": "Usuários"
 }

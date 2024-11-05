@@ -1,1 +1,1 @@
-export { Graphql } from './apollo';
+export { Graphql } from "./apollo";

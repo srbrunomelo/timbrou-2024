@@ -59,14 +59,14 @@ export function LoggerFactory() {
 		get error() {
 			return error();
 		},
-    extend(namespace: string) {
-      return {
-        debug: debug().extend(namespace),
-        info: info().extend(namespace),
-        warn: warn().extend(namespace),
-        error: error().extend(namespace),
-      }
-    }
+		extend(namespace: string) {
+			return {
+				debug: debug().extend(namespace),
+				info: info().extend(namespace),
+				warn: warn().extend(namespace),
+				error: error().extend(namespace),
+			};
+		},
 	};
 }
 
