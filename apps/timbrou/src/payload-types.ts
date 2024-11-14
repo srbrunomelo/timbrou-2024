@@ -7,151 +7,299 @@
  */
 
 export interface Config {
-	auth: {
-		users: UserAuthOperations;
-	};
-	collections: {
-		users: TUser;
-		wealth: TWealth;
-		"payload-locked-documents": PayloadLockedDocument;
-		"payload-preferences": PayloadPreference;
-		"payload-migrations": PayloadMigration;
-	};
-	db: {
-		defaultIDType: string;
-	};
-	globals: {};
-	locale: null;
-	user: TUser & {
-		collection: "users";
-	};
+  auth: {
+    users: UserAuthOperations;
+  };
+  collections: {
+    users: TUser;
+    medias: TMedia;
+    categories: TCategory;
+    products: TProduct;
+    products_landing_pages: TProductLandingPage;
+    'payload-locked-documents': PayloadLockedDocument;
+    'payload-preferences': PayloadPreference;
+    'payload-migrations': PayloadMigration;
+  };
+  db: {
+    defaultIDType: string;
+  };
+  globals: {};
+  locale: null;
+  user: TUser & {
+    collection: 'users';
+  };
 }
 export interface UserAuthOperations {
-	forgotPassword: {
-		email: string;
-		password: string;
-	};
-	login: {
-		email: string;
-		password: string;
-	};
-	registerFirstUser: {
-		email: string;
-		password: string;
-	};
-	unlock: {
-		email: string;
-		password: string;
-	};
+  forgotPassword: {
+    email: string;
+    password: string;
+  };
+  login: {
+    email: string;
+    password: string;
+  };
+  registerFirstUser: {
+    email: string;
+    password: string;
+  };
+  unlock: {
+    email: string;
+    password: string;
+  };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface TUser {
-	id: string;
-	name: string;
-	email?: string | null;
-	document_number?: string | null;
-	phone?: string | null;
-	birth_date?: string | null;
-	external_id?: string | null;
-	updatedAt: string;
-	createdAt: string;
+  id: string;
+  name: string;
+  email: string;
+  document_number?: string | null;
+  phone?: string | null;
+  birth_date?: string | null;
+  external_id?: string | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "wealth".
+ * via the `definition` "medias".
  */
-export interface TWealth {
-	id: string;
-	month: string;
-	money: {
-		name: string;
-		amount: number;
-		is_investment?: boolean | null;
-		category:
-			| "crypto"
-			| "stocks"
-			| "fiis"
-			| "fixed"
-			| "funds"
-			| "funds_multimarket"
-			| "international"
-			| "in_account";
-		description?: string | null;
-		broker?: string | null;
-		id?: string | null;
-	}[];
-	owner: string | TUser;
-	updatedAt: string;
-	createdAt: string;
+export interface TMedia {
+  id: string;
+  alt: string;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories".
+ */
+export interface TCategory {
+  id: string;
+  name: string;
+  description?: string | null;
+  image?: (string | null) | TMedia;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "products".
+ */
+export interface TProduct {
+  id: string;
+  name: string;
+  description?: string | null;
+  price: number;
+  category: string | TCategory;
+  has_landing_page?: boolean | null;
+  image?: (string | null) | TMedia;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "products_landing_pages".
+ */
+export interface TProductLandingPage {
+  id: string;
+  product: string | TProduct;
+  SEO?: {
+    title?: string | null;
+    description?: string | null;
+  };
+  landing?:
+    | (
+        | {
+            title: string;
+            description: string;
+            action: {
+              label: string;
+              link: string;
+            };
+            video: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'text-with-video';
+          }
+        | {
+            title: string;
+            items: {
+              title: string;
+              description?: string | null;
+              icon: string | TMedia;
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'items-list';
+          }
+        | {
+            title: string;
+            testimonials?:
+              | {
+                  title: string;
+                  subtitle?: string | null;
+                  description: string;
+                  image: string | TMedia;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'testimonials-list';
+          }
+        | {
+            name: string;
+            title: string;
+            action: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'lead-form';
+          }
+        | {
+            name: string;
+            title: string;
+            faqs: {
+              question?: string | null;
+              answer?: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              } | null;
+              id?: string | null;
+            }[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'faq';
+          }
+        | {
+            title: string;
+            description: {
+              root: {
+                type: string;
+                children: {
+                  type: string;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            };
+            image_position: 'left' | 'right';
+            image: string | TMedia;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'split-text-image';
+          }
+      )[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-	id: string;
-	document?:
-		| ({
-				relationTo: "users";
-				value: string | TUser;
-		  } | null)
-		| ({
-				relationTo: "wealth";
-				value: string | TWealth;
-		  } | null);
-	globalSlug?: string | null;
-	user: {
-		relationTo: "users";
-		value: string | TUser;
-	};
-	updatedAt: string;
-	createdAt: string;
+  id: string;
+  document?:
+    | ({
+        relationTo: 'users';
+        value: string | TUser;
+      } | null)
+    | ({
+        relationTo: 'medias';
+        value: string | TMedia;
+      } | null)
+    | ({
+        relationTo: 'categories';
+        value: string | TCategory;
+      } | null)
+    | ({
+        relationTo: 'products';
+        value: string | TProduct;
+      } | null)
+    | ({
+        relationTo: 'products_landing_pages';
+        value: string | TProductLandingPage;
+      } | null);
+  globalSlug?: string | null;
+  user: {
+    relationTo: 'users';
+    value: string | TUser;
+  };
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-	id: string;
-	user: {
-		relationTo: "users";
-		value: string | TUser;
-	};
-	key?: string | null;
-	value?:
-		| {
-				[k: string]: unknown;
-		  }
-		| unknown[]
-		| string
-		| number
-		| boolean
-		| null;
-	updatedAt: string;
-	createdAt: string;
+  id: string;
+  user: {
+    relationTo: 'users';
+    value: string | TUser;
+  };
+  key?: string | null;
+  value?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-	id: string;
-	name?: string | null;
-	batch?: number | null;
-	updatedAt: string;
-	createdAt: string;
+  id: string;
+  name?: string | null;
+  batch?: number | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "auth".
  */
 export interface Auth {
-	[k: string]: unknown;
+  [k: string]: unknown;
 }
 
-declare module "payload" {
-	export interface GeneratedTypes extends Config {}
+
+declare module 'payload' {
+  export interface GeneratedTypes extends Config {}
 }
