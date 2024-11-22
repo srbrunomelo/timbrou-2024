@@ -16,6 +16,8 @@ export interface Config {
     categories: TCategory;
     products: TProduct;
     products_landing_pages: TProductLandingPage;
+    receipts: TMedia1;
+    orders: TOrder;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -224,6 +226,43 @@ export interface TProductLandingPage {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "receipts".
+ */
+export interface TMedia1 {
+  id: string;
+  name: string;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "orders".
+ */
+export interface TOrder {
+  id: string;
+  products: {
+    product?: (string | null) | TProduct;
+    id?: string | null;
+  }[];
+  buyer: string | TUser;
+  subtotal: number;
+  total: number;
+  status?: ('awaiting_payment' | 'preparing' | 'shipped' | 'delivered' | 'canceled') | null;
+  receipt?: (string | null) | TMedia1;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -248,6 +287,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'products_landing_pages';
         value: string | TProductLandingPage;
+      } | null)
+    | ({
+        relationTo: 'receipts';
+        value: string | TMedia1;
+      } | null)
+    | ({
+        relationTo: 'orders';
+        value: string | TOrder;
       } | null);
   globalSlug?: string | null;
   user: {

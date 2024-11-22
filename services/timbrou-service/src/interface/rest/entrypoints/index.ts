@@ -1,7 +1,9 @@
 import { InfraDependencies } from "@/infra/dependencies";
 import type { Hono } from "hono";
 import { cors } from "hono/cors";
+import { CategoriesEntrypoints } from "./v1/categories.entrypoints";
 import { HealthEntrypoints } from "./v1/health-entrypoints";
+import { UsersEntrypoints } from "./v1/users.entrypoints";
 
 function EntrypointsFactory() {
 	let app: Hono;
@@ -28,6 +30,10 @@ function EntrypointsFactory() {
 
 		// Health
 		app.route("/", HealthEntrypoints.routes());
+    // Users
+    app.route("/v1/users", UsersEntrypoints.routes());
+    // Categories
+    app.route("/v1/categories", CategoriesEntrypoints.routes());
 
 		return app;
 	}

@@ -4,7 +4,9 @@
 	"main": "index.js",
 	"license": "MIT",
 	"private": true,
-	"files": ["dist/*"],
+	"files": [
+		"dist/*"
+	],
 	"type": "module",
 	"scripts": {
 		"build": "NODE_OPTIONS='--max-old-space-size=16384' tsup && yarn tailwind:build && cp -r src/themes dist",
@@ -35,7 +37,8 @@
 		"recharts": "^2.12.7",
 		"tailwind-merge": "^2.4.0",
 		"tsup": "^8.2.4",
-		"uuid": "^10.0.0"
+		"uuid": "^10.0.0",
+		"vaul": "^1.1.1"
 	},
 	"devDependencies": {
 		"@chromatic-com/storybook": "^1.6.1",
@@ -94,6 +97,11 @@
 			"types": "./dist/components/data-table/data-table.d.ts",
 			"import": "./dist/components/data-table/data-table.esm.js",
 			"require": "./dist/components/data-table/data-table.cjs.js"
+		},
+		"./drawer": {
+			"types": "./dist/components/drawer/drawer.d.ts",
+			"import": "./dist/components/drawer/drawer.esm.js",
+			"require": "./dist/components/drawer/drawer.cjs.js"
 		},
 		"./dropdown": {
 			"types": "./dist/components/dropdown/dropdown.d.ts",
