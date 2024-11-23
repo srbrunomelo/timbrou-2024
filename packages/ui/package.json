@@ -21,6 +21,7 @@
 		"lint:fix": "yarn lint:prettier:fix && yarn lint:eslint:fix"
 	},
 	"dependencies": {
+		"@radix-ui/react-avatar": "^1.1.1",
 		"@radix-ui/react-checkbox": "^1.1.1",
 		"@radix-ui/react-dialog": "^1.1.1",
 		"@radix-ui/react-dropdown-menu": "^2.1.1",
@@ -67,6 +68,11 @@
 			"types": "./dist/components/alert/alert.d.ts",
 			"import": "./dist/components/alert/alert.esm.js",
 			"require": "./dist/components/alert/alert.cjs.js"
+		},
+		"./avatar": {
+			"types": "./dist/components/avatar/avatar.d.ts",
+			"import": "./dist/components/avatar/avatar.esm.js",
+			"require": "./dist/components/avatar/avatar.cjs.js"
 		},
 		"./badge": {
 			"types": "./dist/components/badge/badge.d.ts",

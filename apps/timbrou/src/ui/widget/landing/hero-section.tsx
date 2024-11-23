@@ -8,7 +8,7 @@ import {
 	DrawerTitle,
 	DrawerTrigger,
 } from "@repo/ui/drawer";
-import { Menu, X } from "lucide-react";
+import { GuitarIcon, Menu, X } from "lucide-react";
 
 const navigation = [
 	{ name: "Product", href: "#" },
@@ -91,11 +91,7 @@ export function HeroSection() {
 					<div className="flex lg:flex-1">
 						<a href="#" className="-m-1.5 p-1.5">
 							<span className="sr-only">Timbrou</span>
-							<img
-								alt=""
-								src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
-								className="h-8 w-auto"
-							/>
+              <GuitarIcon className="h-8 w-auto text-white" />
 						</a>
 					</div>
 					<div className="flex lg:hidden">

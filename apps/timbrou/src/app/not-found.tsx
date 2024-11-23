@@ -1,15 +1,13 @@
+import { GuitarIcon } from "lucide-react";
+
 export default function NotFoundPage() {
 	return (
 		<div className="flex min-h-full flex-col bg-white pb-12 pt-16">
 			<main className="mx-auto flex w-full max-w-7xl flex-grow flex-col justify-center px-6 lg:px-8">
 				<div className="flex flex-shrink-0 justify-center">
 					<a href="#" className="inline-flex">
-						<span className="sr-only">Your Company</span>
-						<img
-							alt=""
-							src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-							className="h-12 w-auto"
-						/>
+						<span className="sr-only">Timbrou</span>
+            <GuitarIcon className="h-12 w-auto text-pure" />
 					</a>
 				</div>
 				<div className="py-16">

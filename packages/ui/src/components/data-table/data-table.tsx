@@ -1,6 +1,6 @@
 "use client";
 
-import { type ColumnDef, flexRender } from "@tanstack/react-table";
+import { type ColumnDef, type ColumnDefBase, flexRender } from "@tanstack/react-table";
 import { Columns3 } from "lucide-react";
 
 import { cn } from "@/lib/classes";
@@ -23,6 +23,8 @@ import {
 import { DataTableProvider } from "./data-table-context";
 import { useDataTable } from "./data-table-hooks";
 import { DataTablePagination } from "./data-table-pagination";
+
+export type TCellProps<TData, TValue> = ColumnDefBase<TData, TValue>['cell']
 
 type DataTableProps<TData, TValue> = {
 	columns: ColumnDef<TData, TValue>[];

@@ -105,8 +105,15 @@ export interface TProduct {
   description?: string | null;
   price: number;
   category: string | TCategory;
-  has_landing_page?: boolean | null;
-  image?: (string | null) | TMedia;
+  hasLandingPage?: boolean | null;
+  images?:
+    | {
+        url?: string | null;
+        alt?: string | null;
+        default?: boolean | null;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }

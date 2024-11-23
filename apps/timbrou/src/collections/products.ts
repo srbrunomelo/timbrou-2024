@@ -39,15 +39,32 @@ export const Products: CollectionConfig = {
     },
     {
       label: "Tem landing page?",
-      name: "has_landing_page",
+      name: "hasLandingPage",
       type: "checkbox",
       defaultValue: false,
     },
     {
       label: "Foto",
-      name: "image",
-      type: "relationship",
-      relationTo: "medias",
+      name: "images",
+      type: "array",
+      fields: [
+        {
+          label: "Url",
+          name: "url",
+          type: "text",
+        },
+        {
+          label: "Alt",
+          name: "alt",
+          type: "text",
+        },
+        {
+          label: "Principal",
+          name: "default",
+          type: "checkbox",
+          defaultValue: false,
+        }
+      ]
     },
   ],
 };

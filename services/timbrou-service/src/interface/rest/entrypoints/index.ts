@@ -4,6 +4,7 @@ import { cors } from "hono/cors";
 import { CategoriesEntrypoints } from "./v1/categories.entrypoints";
 import { HealthEntrypoints } from "./v1/health-entrypoints";
 import { UsersEntrypoints } from "./v1/users.entrypoints";
+import { ProductsEntrypoints } from "./v1/products.entrypoints";
 
 function EntrypointsFactory() {
 	let app: Hono;
@@ -34,6 +35,8 @@ function EntrypointsFactory() {
     app.route("/v1/users", UsersEntrypoints.routes());
     // Categories
     app.route("/v1/categories", CategoriesEntrypoints.routes());
+    // Products
+    app.route("/v1/products", ProductsEntrypoints.routes());
 
 		return app;
 	}

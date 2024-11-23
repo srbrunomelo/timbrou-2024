@@ -10,11 +10,11 @@ import "@/ui/styles/globals.css";
 
 export const metadata: Metadata = {
 	title: {
-		template: "%s - Finance Share",
-		default: "Finance Share - Compartilhe suas finanças com quem você quiser",
+		template: "%s - Timbrou",
+		default: "Timbrou - Otimize a criação de suas composições",
 	},
 	description:
-		"O Finance Share é um software de compartilhamento de finanças que ajuda você a gerenciar suas finanças de forma fácil e eficiente.",
+		"O Timbrou é um software de criação de composições que otimiza o seu fluxo de trabalho.",
 };
 
 const inter = Inter({
