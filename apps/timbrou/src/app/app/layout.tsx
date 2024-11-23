@@ -2,18 +2,18 @@ import { DashboardLayout } from "@/ui/layouts/dashboard-layout";
 import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/nextjs";
 
 export default function DashboardRootLayout({
-	children,
+  children,
 }: {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-	return (
-		<>
-			<SignedOut>
-				<RedirectToSignIn />
-			</SignedOut>
-			<SignedIn>
-				<DashboardLayout>{children}</DashboardLayout>
-			</SignedIn>
-		</>
-	);
+  return (
+    <>
+      <SignedOut>
+        <RedirectToSignIn />
+      </SignedOut>
+      <SignedIn>
+        <DashboardLayout>{children}</DashboardLayout>
+      </SignedIn>
+    </>
+  );
 }

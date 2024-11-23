@@ -2,5 +2,8 @@
 	"layout.dashboard.title": "Finance Share",
 	"layout.sidebar.dashboard": "Dashboard",
 	"layout.sidebar.wealth": "Patrimônio",
-	"layout.sidebar.users": "Usuários"
+	"layout.sidebar.users": "Usuários",
+	"layout.sidebar.orders": "Pedidos",
+	"layout.sidebar.my-orders": "Meus pedidos",
+	"layout.sidebar.products": "Produtos"
 }
